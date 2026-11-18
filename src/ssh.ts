@@ -137,7 +137,11 @@ export class SshClient {
       `agent@${box.hostname}`,
     ];
     // The key travels in the environment, not argv (argv is visible in ps).
-    return { argv, env: { PATH: process.env.PATH ?? "/usr/bin:/bin", HOME: process.env.HOME ?? "/tmp", ORBLE_TOKEN: api.token, ORBLE_API_URL: api.baseUrl } };
+    const env: Record<string, string> = { PATH: process.env.PATH ?? "/usr/bin:/bin", HOME: process.env.HOME ?? "/tmp", ORBLE_TOKEN: api.token, ORBLE_API_URL: api.baseUrl };
+    // Under the bb desktop app process.execPath is Electron, which runs the proxy as Node only with this set
+    // (without it: "The platform failed to initialize").
+    if (process.versions.electron) env.ELECTRON_RUN_AS_NODE = "1";
+    return { argv, env };
   }
 }
 
