@@ -1,6 +1,6 @@
 {
   "name": "bb-plugin-orble",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "type": "module",
   "private": true,
   "description": "Orble boxes (orble.tech) as bb machines, connected by a reverse SSH tunnel. Experimental.",
@@ -23,7 +23,7 @@
     "zod": "^4.6.5"
   },
   "devDependencies": {
-    "@get-bb/plugin-sdk": "0.6.132",
+    "@get-bb/plugin-sdk": "0.6.157",
     "@radix-ui/react-dialog": "^1.3.1",
     "@types/better-sqlite3": "^7.6.13",
     "@types/node": "^22.0.0",
