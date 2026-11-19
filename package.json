@@ -1,6 +1,6 @@
 {
   "name": "bb-plugin-orble",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "private": true,
   "description": "Orble boxes (orble.tech) as bb machines, connected by a reverse SSH tunnel. Experimental.",
